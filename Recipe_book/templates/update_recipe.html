@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+        <nav>
+            <a href="{{ url_for('index') }}"><button>Home</button></a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('new_recipe') }}"><button>New Recipe</button></a>
+                <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><button>Login</button></a>
+                <a href="{{ url_for('register') }}"><button>Register</button></a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        <h2>Update Recipe</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div>
+                <label for="name">Title</label>
+                {{ form.name }}
+            </div>
+            <div>
+                <label for="ingredients">Ingredients</label>
+                {{ form.ingredients }}
+            </div>
+            <div>
+                <label for="steps">Instructions</label>
+                {{ form.steps }}
+            </div>
+            <div>
+                <label for="picture">Image</label>
+                {{ form.picture }}
+                {% if recipe.picture %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ recipe.picture) }}" alt="{{ recipe.name }}" width="15%">
+                {% endif %}
+           
+            </div>
+            <div>
+                {{ form.submit }}
+            </div>
+        </form>
+    </main>
+
+
+</body>
+</html>

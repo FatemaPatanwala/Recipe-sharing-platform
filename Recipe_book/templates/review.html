@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews for {{ recipe.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+    </header>
+    <nav>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+
+        {% else %}
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+
+            <a href="{{ url_for('login') }}"><button>LOGIN</button></a>
+            <a href="{{ url_for('register') }}"><button>REGISTER</button></a>
+        {% endif %}
+    </nav>
+    <main>
+        <h2>Reviews for {{ recipe.name }}</h2>
+
+        <h3>All Reviews</h3>
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <p><strong>Rating:</strong> {{ review.rating }} / 5</p>
+                    <p>{{ review.body }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Add a Review</h3>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                <label for="body">Review</label>
+                {{ form.body }}
+            </div>
+            <div>
+                <label for="rating">Rating</label>
+                {{ form.rating }}
+            </div>
+            <div>
+                {{ form.submit }}
+            </div>
+        </form>
+    </main>
+</body>
+</html>

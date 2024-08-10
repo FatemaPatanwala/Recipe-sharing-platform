@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button>Login</button></a>
+            <a href="{{ url_for('register') }}"><button>Register</button></a>
+        {% endif %}
+    </nav>
+    <main>
+        <h2>Create a New Recipe</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <label for="name">Title</label>
+            {{ form.name }}
+            <label for="ingredients">Ingredients</label>
+            {{ form.ingredients }}
+            <label for="steps">Instructions</label>
+            {{ form.steps }}
+            <label for="picture">Image</label>
+            {{ form.picture }}
+            {{ form.submit }}
+        </form>
+    </main>
+    
+</body>
+</html>

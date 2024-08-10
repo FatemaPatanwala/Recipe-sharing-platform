@@ -1,0 +1,156 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #85c4f1;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation Styling */
+nav {
+    background: #6779e8;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #3e11f4;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(110, 174, 223);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+form input[type="submit"],
+form button {
+    background: #6779e8;
+    color: #130f0f;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background: #555;
+}
+
+/* Recipe List Styling */
+.recipe-list {
+    /* list-style:; */
+    padding: 0;
+}
+
+.recipe-list li {
+    background: #6779e8;
+    margin-bottom: 2px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.recipe-list img {
+    max-width: 60px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
+.recipe-list h3 {
+    margin: 0;
+}
+
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+
+div{
+    margin-bottom: 1%;
+}
+
+.container {
+    margin-left: 30%;
+    margin-top: 3%;
+    background-color: #003366;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+}
+
+button{
+    border-radius: 40px;
+    width:15%;
+    padding:8px 8px; 
+    font-size: 20px
+}

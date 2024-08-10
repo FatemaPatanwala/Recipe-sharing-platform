@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('new_recipe') }}"><button>New Recipe</button></a>
+            <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('register') }}"><button>Register</button></a>
+        {% endif %}
+    </nav>
+    <main>
+        <div class="container">
+        <h2 style="color: rgb(110, 174, 223);">SIGN IN</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                <label for="username">Username</label>
+                {{ form.username }}
+            </div>
+            <div>
+                <label for="password">Password</label>
+                {{ form.password }}
+            </div>
+            <div>
+                {{ form.remember_me }}
+                <label for="remember_me">Remember Me</label>
+            </div>
+            <div>
+                {{ form.submit }}
+            </div>
+        </form></div>
+    </main>
+   
+</body>
+</html>

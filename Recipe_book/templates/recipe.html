@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('index') }}"><button>Home</button></a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('new_recipe') }}"><button>New Recipe</button></a>
+            <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button>Login</button></a>
+            <a href="{{ url_for('register') }}"><button>Register</button></a>
+        {% endif %}
+    </nav>
+    <main>
+        <h2 style="text-transform: capitalize;">{{ recipe.name }}</h2>
+        {% if recipe.picture %}
+            <img src="{{ url_for('static', filename='uploads/' ~ recipe.picture) }}" alt="{{ recipe.name }}" width="15%">
+        {% endif %}
+        {% if current_user.is_authenticated and recipe.author == current_user %}
+            <a href="{{ url_for('edit_recipe', id=recipe.id) }}"><button>Update Recipe</button></a>
+        {% endif %}
+        <h3>INGREDIENTS</h3>
+        <li>{{ recipe.ingredients }}</li>
+        
+        <h3>STEPS</h3>
+        <li>{{ recipe.steps }}</li>
+
+        <h3>Reviews</h3>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <label for="body">Review</label>
+            {{ form.body }}
+            <label for="rating">Rating</label>
+            {{ form.rating }}
+            {{ form.submit }}
+        </form>
+
+        
+    </main>
+    
+</body>
+</html>
+
