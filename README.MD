@@ -13,15 +13,14 @@ A web application built with Flask and SQLALCHEMY that allows users to share, re
 
 
 ## **Screenshots**
-1. **Main page**
-![Screenshot 2024-08-10 154805](https://github.com/user-attachments/assets/9c4a4a50-7009-45bf-b43b-08a51ddcc917)
+1. **Home page**
+![Screenshot 2024-08-10 154805](https://github.com/user-attachments/assets/d19e605a-b55b-4f86-b5fe-0833131ba120)
 
 2. **Registration page**
+![Screenshot 2024-08-10 154846](https://github.com/user-attachments/assets/b28374c0-981d-4400-bb06-55c1a6cfc420)
 
-![Screenshot 2024-08-10 154846](https://github.com/user-attachments/assets/ac751c52-4413-4acf-b2a4-7f7fb1783043)
-
-3.**Recipe page**
-![Screenshot 2024-08-10 154917](https://github.com/user-attachments/assets/8d98c845-0eb8-4870-af0c-2169d33ed374)
+3. **Recipe page**
+![Screenshot 2024-08-10 154917](https://github.com/user-attachments/assets/3b98bcdb-e3a9-4254-8cb6-9f1d4090d622)
 
 
 ## **Installation**
