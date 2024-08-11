@@ -38,7 +38,7 @@ A web application built with Flask and SQLALCHEMY that allows users to share, re
 ```
 3. **Activate the virtual environment**
 ```bash
- .venv\Scripts\activate
+ source .venv\Scripts\activate
 ```
 4. **Install the dependencies**:
     ```bash
