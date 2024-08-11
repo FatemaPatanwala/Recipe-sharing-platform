@@ -7,7 +7,7 @@ import os
 app=Flask(__name__)
 app.config['SECRET_KEY']='mysecret'                                  
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///mydb.db'
-app.config['SQLALCHEMY_TRACK_MODIFICTIONS']=False   
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False   
 
 app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'static/uploads')
 app.config['MAX_CONTENT_PATH'] = 16 * 1024 * 1024
