@@ -1,7 +1,6 @@
 # Recipe-sharing-platform
 
-A web application built with Flask and SQLALCHEMY that allows users to share, review, and rate recipes. Features include user authentication, adding/editing recipes, uploading images, and viewing all recipes and reviews.
-
+The Recipe Sharing Platform is a web application where users can share their recipes and review recipes from others. The application includes features for user authentication, recipe creation, editing, and deletion, as well as a review and rating system.
 
 ## **Features**
 
