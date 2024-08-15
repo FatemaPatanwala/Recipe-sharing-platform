@@ -10,6 +10,13 @@ The Recipe Sharing Platform is a web application where users can share their rec
 - Review and rate recipes
 - View all recipes and reviews
 
+## **Technologies Used**
+
+- **Backend**: Flask, SQLAlchemy, Flask-Migrate
+- **Frontend**: HTML, CSS, Jinja2
+- **Database**: SQLite
+- **Forms**: Flask-WTF
+- **Environment Management**: Virtualenv
 
 ## **Screenshots**
 1. **Home page**
